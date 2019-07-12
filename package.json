@@ -1,0 +1,21 @@
+{
+  "name": "examen",
+  "version": "1.0.0",
+  "description": "lectura y analisis yaml",
+  "main": "index.ts",
+  "scripts": {
+    "start": "tsc index.ts && nodemon index.js",
+    "dev": "ts-node-dev --respawn --transpileOnly index.ts"
+  },
+  "author": "Sebastian Medina",
+  "license": "ISC",
+  "dependencies": {
+    "@types/node": "^12.6.2",
+    "js-yaml": "^3.13.1",
+    "ts-node-dev": "^1.0.0-pre.40"
+  },
+  "devDependencies": {
+    "nodemon": "^1.19.1",
+    "typescript": "^3.5.3"
+  }
+}

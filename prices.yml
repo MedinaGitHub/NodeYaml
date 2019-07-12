@@ -1,0 +1,46 @@
+# en base a los siguientes datos, implementar
+# un modelo que permita calcular el valor total
+# para lo siguiente:
+
+# --> 10 unidades de naranjas
+
+# y luego recalcular el total agregando lo siguiente:
+
+# --> 15 unidades de manzanas
+
+# importante a considerar es que las promociones no
+# son acumulables, es decir, solo puede haber una
+# promocion activa en el carro. en caso de dos promociones
+# sean aplicables, debe "ganar" la que aplique el mayor
+# descuento.
+
+#tiers  niveles   requirements requisitos
+---
+products:
+  orange:
+    price_model: fixed
+    price: 12
+
+  apple:
+    price_model: tiered
+    tiers:
+    - from: 1
+      to: 10
+      price: 10
+    - from: 11
+      to: 20
+      price: 9
+    - from: 21
+      to: 30
+      price: 8
+
+promotions:
+  one:
+    discount: 0.2 # 20% discount
+    requirements:
+      min_units: 20 # requiere un mínimo de 20 unidades en el carro
+
+  two:
+    discount: 0.1 # 10% discount
+    requirements:
+      min_amount: 100 # sólo aplica si el total es mayor a 100
